@@ -1,0 +1,40 @@
+\documentclass[10pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\usepackage{mathspec}
+\setmathfont(Digits,Latin,Greek)[Mapping=tex-text]{Palatino}
+\setsansfont[Mapping=tex-text]{Helvetica Neue}
+\setmainfont[Mapping=tex-text]{Palatino}
+
+\begingroup\lccode`~=`_
+\lowercase{\endgroup\def~}#1{_{\scriptscriptstyle#1}}
+
+\AtBeginDocument{\mathcode`_="8000 \catcode`_=12 }
+
+\begin{document}
+\newcommand\minus{\scalebox{0.75}[1.0]{\( - \)}}
+
+
+$$ \textsf{Gaussian:   } r(x, y; \mu, \alpha, \sigma) = \alpha e^{-\frac{(\mu_{x}-x)^{2} + (\mu_{y}-y)^{2}}{\sigma^2}}$$
+
+$$\textsf{Difference of Gaussians:   } r(x, y; \mu, \alpha_{pos}, \alpha_{neg}, \sigma_{pos}, \sigma_{neg}) = \alpha_{pos} e^{-\frac{(\mu_{x}-x)^{2} + (\mu_{y}-y)^{2}}{\sigma_{pos}^2}} - \alpha_{neg} e^{-\frac{(\mu_{x}-x)^{2} + (\mu_{y}-y)^{2}}{\sigma_{neg}^2}}$$
+
+$$\textsf{Compressive Spatial Summation:   } r(x, y;\alpha, \mu, \sigma, n) = \alpha e^{-n \frac{(\mu_{x}-x)^{2} + (\mu_{y}-y)^{2}}{\sigma^2}}$$
+
+$$\textsf{Elliptic Gaussian:   } r(x \in \mathbb{R}^2; \alpha, \mu, \Sigma \in \mathbb{R}^{2x2}) = \alpha e^{-\frac{1}{2}(x-\mu)^{T} \Sigma^{-1} (x-\mu)}$$
+
+$$\textsf{Gabor wavelet (real):   } g(x,y;\lambda,\theta,\phi,\gamma) = \alpha e^{-\frac{x'^2+\gamma^2 y'^2}{2\sigma^2}} cos\bigg(2\pi\frac{x'}{\lambda} + \phi\bigg)$$
+Where
+$$  x' = x \cdot cos\theta + y \cdot sin\theta $$
+$$  y' = -x \cdot sin\theta + y \cdot cos\theta $$
+
+
+
+
+
+
+
+
+\end{document}
